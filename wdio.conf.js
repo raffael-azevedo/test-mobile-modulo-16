@@ -83,19 +83,19 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    baseUrl: '127.0.0.1',
     port: 4723,
-    path: '/wd/hub',
+    path: '/',
 
     capabilities: [{
-        browserName: 'chrome',
+        // browserName: 'chrome',
         "appium:platformName": "Android",
         "appium:platformVersion": "9.0",
         "appium:deviceName": "Ebac",
         "appium:automationName": "UiAutomator2",
         "appium:appPackage": "com.wdiodemoapp",
-        "appium:appWaitActivity": ".MainActivity",
-        "appium:appActivity": ".SplashActivity"
+        "appium:appWaitActivity": "MainActivity",
+        // "appium:appActivity": ".SplashActivity"
     }],
 
     //

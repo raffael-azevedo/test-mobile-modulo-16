@@ -50,9 +50,7 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
+
 
     //
     // ===================
@@ -87,8 +85,19 @@ exports.config = {
     // gets prepended directly.
     baseUrl: 'http://localhost',
     port: 4723,
-    path: '/wd/wdio',
-    
+    path: '/wd/hub',
+
+    capabilities: [{
+        browserName: 'chrome',
+        "appium:platformName": "Android",
+        "appium:platformVersion": "9.0",
+        "appium:deviceName": "Ebac",
+        "appium:automationName": "UiAutomator2",
+        "appium:appPackage": "com.wdiodemoapp",
+        "appium:appWaitActivity": ".MainActivity",
+        "appium:appActivity": ".SplashActivity"
+    }],
+
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -128,7 +137,7 @@ exports.config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: ['spec'],
 
-    
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
